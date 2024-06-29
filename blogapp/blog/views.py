@@ -15,4 +15,6 @@ def index(request):
 
 class BlogListView(ListView):
     model = Blog
-    # template_name = "blog_list.html"
+
+class BlogAuthorListView(ListView):
+    model = BlogAuthor
