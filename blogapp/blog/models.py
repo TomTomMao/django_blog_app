@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class Blog(models.Model):
     title = models.CharField(max_length=100, help_text='Enter post title')
-    Author = models.ForeignKey('BlogAuthor', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey('BlogAuthor', on_delete=models.SET_NULL, null=True)
     post_date = models.DateField(default=date.today)
     description = models.CharField(max_length=1000, help_text="Enter the content of the blog")
     

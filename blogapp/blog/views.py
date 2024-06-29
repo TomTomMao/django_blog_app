@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Blog, BlogAuthor
+from django.views.generic import ListView
+
 # Create your views here.
 def index(request):
     num_blogs = Blog.objects.all().count()
@@ -10,3 +12,7 @@ def index(request):
         'num_blogAuthors': num_blogAuthors
     }
     return render(request, 'index.html', context=context)
+
+class BlogListView(ListView):
+    model = Blog
+    # template_name = "blog_list.html"
