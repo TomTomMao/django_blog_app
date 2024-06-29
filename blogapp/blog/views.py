@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Blog, BlogAuthor
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 def index(request):
@@ -18,3 +18,6 @@ class BlogListView(ListView):
 
 class BlogAuthorListView(ListView):
     model = BlogAuthor
+
+class BlogDetailView(DetailView):
+    model = Blog
